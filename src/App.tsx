@@ -1,7 +1,8 @@
 import './App.css'
-import {Route, Routes} from "react-router";
+import {BrowserRouter, Route, Routes} from "react-router";
 import Auth from "./pages/Auth.tsx";
 import TodoLayout from "./pages/TodoLayout.tsx";
+import ToDoList from "./pages/ToDoList.tsx";
 
 function App() {
 
@@ -12,11 +13,13 @@ function App() {
      */
 
     return (
-        <>
+        <BrowserRouter>
             <Routes>
-                <Route index element={<TodoLayout/>}/>
+                <Route path="/" element={<TodoLayout />}>
+                    <Route index element={<ToDoList />} />
+                </Route>
             </Routes>
-        </>
+        </BrowserRouter>
     )
 }
 
